@@ -1,0 +1,1 @@
+alert(hr.Urls.route("article/:id", {id: 1234}));

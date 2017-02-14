@@ -1,0 +1,3 @@
+<a href="#" title="<%- command.get('title') %>">
+    <i class="fa <% if (!command.hasFlag("running")) { %>fa-<%- command.get('icons.default') %><% } else { %>fa-refresh fa-spin<% } %>"></i>
+</a>

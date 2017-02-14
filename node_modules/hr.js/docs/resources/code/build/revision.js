@@ -1,0 +1,1 @@
+alert("Revsion n°"+hr.configs.revision+" : "+(new Date(hr.configs.revision)));

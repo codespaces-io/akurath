@@ -1,0 +1,19 @@
+{
+    "name": "cb.settings",
+    "version": "0.1.2",
+    "title": "Settings",
+    "description": "Configuration interface for your workspace.",
+    "homepage": "https://github.com/FriendCode/codebox",
+    "license": "Apache",
+    "author": {
+        "name": "Akurath",
+        "email": "contact@friendco.de",
+        "url": "https://www.codebox.io"
+    },
+    "client": {
+        "main": "client"
+    },
+    "engines": {
+        "akurath": ">=0.1.0"
+    }
+}

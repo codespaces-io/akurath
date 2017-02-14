@@ -1,0 +1,17 @@
+{
+    "name": "cb.shells",
+    "version": "0.0.1",
+
+    "main": "./main.js",
+    "private": true,
+
+    "plugin": {
+        "consumes": [
+            "events",
+            "workspace"
+        ],
+        "provides": [
+            "shells"
+        ]
+    }
+}

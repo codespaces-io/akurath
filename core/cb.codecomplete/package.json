@@ -1,0 +1,19 @@
+{
+    "name": "cb.codecomplete",
+    "version": "0.0.1",
+
+    "main": "./main.js",
+    "private": true,
+
+    "plugin": {
+        "provides": [
+            "codecomplete"
+        ],
+        "consumes": [
+            "logger",
+            "workspace",
+            "events",
+            "project"
+        ]
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "name": "cb.rpc",
+    "version": "0.0.1",
+
+    "main": "./main.js",
+    "private": true,
+
+    "plugin": {
+        "provides": [
+            "rpc",
+            "httpRPC"
+        ],
+        "consumes": [
+            "logger",
+            "server",
+            "workspace"
+        ]
+    }
+}

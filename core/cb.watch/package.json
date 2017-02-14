@@ -1,0 +1,16 @@
+{
+    "name": "cb.watch",
+    "version": "0.0.1",
+
+    "main": "./main.js",
+    "private": true,
+
+    "plugin": {
+        "provides": [
+            "watch"
+        ],
+        "consumes": [
+            "events", "logger"
+        ]
+    }
+}

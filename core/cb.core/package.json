@@ -1,0 +1,16 @@
+{
+    "name": "cb.core",
+    "version": "0.0.1",
+
+    "main": "./main.js",
+    "private": true,
+
+    "plugin": {
+        "provides": [
+            "workspace"
+        ],
+        "consumes": [
+            "events"
+        ]
+    }
+}

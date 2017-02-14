@@ -1,0 +1,1 @@
+alert(hr.Urls.static("favicon.png"));

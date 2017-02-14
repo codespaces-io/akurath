@@ -1,0 +1,13 @@
+#codebox {
+    .cb-body {
+        position: absolute;
+        top: @codeboxMenubarHeight;
+        bottom: @codeboxStatusbarHeight;
+        left: @codeboxToolbarWidth;
+        right: 0px;
+        z-index: 10;
+        background: @codeboxBodyBackground;
+        .transition(left @lateralTransitionSpeed);
+        overflow: hidden;
+    }
+}

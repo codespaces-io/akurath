@@ -1,0 +1,1 @@
+alert(hr.Urls.base("index.html"));
