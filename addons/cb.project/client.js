@@ -18,52 +18,22 @@ define([
     ])
 
     // Add menu
-    menu.register("project", {
-        title: "Project",
-        offline: false
-    }).menuSection([
-        autorun.command,
-        runner.command
-    ]).menuSection([
-        {
-            'id': "project.build",
-            'category': "Project",
-            'title': "Connect to Node2",
-            'offline': false,
-            'action': function() {
-                return autorun.command.run({
-                    'type': "build"
-                });
+    menu
+        .register("project", {
+            title: "Nodes",
+            offline: false
+        })
+        .menuSection(autorun.nodes)
+        .menuSection([
+            {
+                'id': "project.ports.refresh",
+                'category': "Project",
+                'title': "Refresh Ports",
+                'offline': false,
+                'action': ports.update
             },
-            'shortcuts': [
-                "mod+b"
-            ]
-        },
-        {
-            'id': "project.clean",
-            'category': "Connect to Node3",
-            'title': "Clean",
-            'offline': false,
-            'action': function() {
-                return autorun.command.run({
-                    'type': "clean"
-                });
-            },
-            'shortcuts': [
-                "mod+shift+k"
-            ]
-        }
-    ]).menuSection([
-        {
-
-            'id': "project.ports.refresh",
-            'category': "Project",
-            'title': "Refresh Ports",
-            'offline': false,
-            'action': ports.update
-        },
-        ports.command
-    ]);
+            ports.command
+        ]);
 
     // Auto-updates
     box.on("box:project:define", function() {

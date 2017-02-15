@@ -22,61 +22,65 @@ define([
         'build': "fa-cog fa-spin",
         'clean': "fa-eraser"
     };
-
-    // Run command
-    var runCommand = commands.register("project.run", {
-        category: "Project",
-        title: "Node1",
-        icons: {
-            'default': "play",
-        },
-        offline: false,
-        position: 1,
-        shortcuts: [
-            "alt+r"
-        ]
-    }, function(options) {
+    
+    var getNodeOptions = function (nodeNum) {
+        return {
+            category: "Project",
+            title: "Node " + nodeNum,
+            icons: {
+                'default': "play",
+            },
+            offline: false,
+            position: nodeNum,
+            shortcuts: [
+                "alt+" + nodeNum
+            ]
+        };
+    }
+    
+    var runCommandHandler = function(options) {
         options = _.defaults(options || {}, {
             'ignoreErrors': false
         });
 
-        if (runningTerm !== undefined) {
-            // For stopping: Close terminal
-            if (runningTerm != null) {
-                runningTerm.terminal.closeTab();
-            }
+        // if (runningTerm !== undefined) {
+        //     // For stopping: Close terminal
+        //     if (runningTerm != null) {
+        //         runningTerm.terminal.closeTab();
+        //     }
 
-            return;
-        }
+        //     return;
+        // }
 
         setRunTerminal(null);
 
         // Run
         return box.run({
             'id': options.id,
-            'type': options.type
+            'type': options.type,
+            'nodeId': options.nodeNum
         })
         .then(function(runInfo) {
-            var op = operations.start("project.run."+runInfo.shellId, null, {
-                'title': runInfo.name+" running on port "+runInfo.port,
-                'icons': {
-                    'default': typeIcons[runInfo.type] || "play",
-                },
-                'action': function() {
-                    // Open the url
-                    //window.open(runInfo.url);
+            // var op = operations.start("project.run."+runInfo.shellId, null, {
+            //     'title': runInfo.name+" running on port "+runInfo.port,
+            //     'icons': {
+            //         'default': typeIcons[runInfo.type] || "play",
+            //     },
+            //     'action': function() {
+            //         // Open the url
+            //         //window.open(runInfo.url);
 
-                    // Check that port is still active
-                    ports.update().then(function(ports) {
-                        var _port = _.find(ports, function(proc) {
-                            return proc.port == runInfo.port;
-                        });
-                        if (!_port) {
-                            op.destroy();
-                        }
-                    });
-                }
-            });
+            //         // Check that port is still active
+            //         ports.update().then(function(ports) {
+            //             var _port = _.find(ports, function(proc) {
+            //                 return proc.port == runInfo.port;
+            //             });
+            //             if (!_port) {
+            //                 op.destroy();
+            //             }
+            //         });
+            //     }
+            // });
 
             // Terminal is close: finish the operation
             runInfo.terminal.on("tab:close", function() {
@@ -104,43 +108,48 @@ define([
             
             if (!options.ignoreErrors) dialogs.alert("Error running this project", "An error occurred when trying to run this project: "+(err.message || err));
         });
-    });
+    };
+    var nodes = [];
+    // Run command
+    for (var nodeNum=1; nodeNum<=4; nodeNum++) {
+        nodes.push(commands.register("project.run" + nodeNum, getNodeOptions(nodeNum), runCommandHandler.bind(this, {nodeNum: nodeNum})));
+    }
 
     var setRunTerminal = function(st) {
-        var previous = runningTerm;
-        runningTerm = st;
+        // var previous = runningTerm;
+        // runningTerm = st;
 
-        // Change command state
-        if (runningTerm != null) {
-            runCommand.set({
-                'title': "Stop",
-                'icons': {
-                    'default': "stop"
-                }
-            });
-        } else {
-            runCommand.set({
-                'title': "Node1",
-                'icons': {
-                    'default': "play"
-                }
-            });
-        }
+        // // Change command state
+        // if (runningTerm != null) {
+        //     runCommand.set({
+        //         'title': "Stop",
+        //         'icons': {
+        //             'default': "stop"
+        //         }
+        //     });
+        // } else {
+        //     runCommand.set({
+        //         'title': "Node1",
+        //         'icons': {
+        //             'default': "play"
+        //         }
+        //     });
+        // }
 
-        if (previous 
-        && previous.type == "run"
-        && runningTerm === undefined) {
-            // Run stop command
-            return runCommand.run({
-                'type': "stop",
-                'ignoreErrors': true
-            });
-        }
+        // if (previous 
+        // && previous.type == "run"
+        // && runningTerm === undefined) {
+        //     // Run stop command
+        //     return runCommand.run({
+        //         'type': "stop",
+        //         'ignoreErrors': true
+        //     });
+        // }
     };
 
     setRunTerminal(undefined);
 
     return {
-        'command': runCommand
+        'nodes': nodes
     }
 });

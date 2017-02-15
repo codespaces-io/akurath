@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="/jquery.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="/sh.min.js"></script>
+    </head>
+    <body>
+        <div class="tabs-header"></div>
+        <div class="tabs-content"></div>
+        <script>
+        var i = 0;
+        var $tabsContent = $(".tabs-content");
+        var $tabsHeader = $(".tabs-header");
+
+        var switchTab = function(name) {
+            $tabsContent.find(".tab-content").removeClass("active");
+            $tabsContent.find("#"+name).addClass("active");
+
+            $tabsHeader.find(".tab").removeClass("active");
+            $tabsHeader.find("#"+name).addClass("active");
+        };
+
+        var openTerminal = function(name) {
+            if (!name) {
+                name = "terminal-"+i;
+                i = i + 1;
+            }
+
+            var term = new Terminal({
+                theme: "monokai_soda",
+                cols: 80,
+                rows: 24
+            });
+
+            var tab = $("<div>", {
+                'id': name,
+                'text': name,
+                'class': "tab",
+                'click': function(e) {
+                    switchTab(name);
+                    term.sizeToFit();
+                    term.focus();
+                }
+            });            
+
+            var tabContent = $("<div>", {
+                'id': name,
+                'class': "tab-content"
+            });
+
+            tab.appendTo($tabsHeader);
+            tabContent.appendTo($tabsContent);
+
+            
+            term.open(tabContent[0]);
+
+            var socket = io.connect([window.location.protocol, '//', window.location.host].join(''), {
+                'force new connection': true
+            });
+            socket.on('connect', function() {
+                socket.emit("resize", {
+                    'w': term.cols,
+                    'h': term.rows
+                });
+            });
+            socket.on('output', function (data) {
+                term.write(atob(data));
+            });
+
+            term.on("data", function (c) {
+                socket.emit('input', btoa(c));
+            });
+
+            term.on("resize", function (c, k) {
+                socket.emit("resize", {
+                    'w': c,
+                    'h': k
+                });
+            });
+
+            switchTab(name);
+            term.sizeToFit();
+            term.focus();
+
+            $(window).resize(function () {
+                term.sizeToFit();
+            });
+        };
+
+        // Open a terminal
+        $(document).ready(function() {
+            openTerminal();
+        });
+
+        // Double click to open a new terminal
+        $tabsHeader.dblclick(function() {
+            openTerminal();
+        })
+
+        // resize active terminal
+        $(window).resize(function () {
+            if (Terminal.focus) Terminal.focus.sizeToFit();
+        });
+        </script>
+    </body>
+</html>

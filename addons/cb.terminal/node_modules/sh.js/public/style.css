@@ -1,0 +1,118 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+body {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+}
+
+/* Tabs */
+.tabs-header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    background: #e9e9e9;
+    background: -moz-linear-gradient(top, #e9e9e9 0%, #bbbabb 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e9e9e9), color-stop(100%,#bbbabb));
+    border-bottom: 1px solid #444444;
+    box-shadow: 0px 0px 10px #141414;
+}
+
+.tabs-header .tab {
+    display: inline-block;
+    height: 100%;
+    padding: 0px 10px;
+    line-height: 24px;
+    cursor: default;
+    font-size: 12px;
+}
+
+.tabs-header .tab.active {
+    color: #fff;
+    background: #7793f5;
+    background: -moz-linear-gradient(top, #7793f5 0%, #406df2 50%, #275af1 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7793f5), color-stop(50%,#406df2), color-stop(100%,#275af1));
+}
+
+.tabs-content {
+    position: fixed;
+    top: 25px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: #000;
+    padding: 3px;
+}
+
+.tabs-content .tab-content {
+    width: 100%;
+    height: 100%;
+    display: none;    
+}
+
+.tabs-content .tab-content.active {
+    display: block;    
+}
+
+/* Terminal */
+.terminal-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-family: Menlo,Monaco,"DejaVu Sans Mono",Consolas,"Andale Mono",monospace;
+}
+.terminal-container div {
+    margin: 0px;
+    padding: 0px;
+    user-select: initial;
+    -webkit-user-select: initial;
+}
+.terminal-container .terminal {
+    width: 100%;
+    height: 100%;
+    font-size: 13px;
+    line-height: 18px;
+}
+.terminal-container .terminal-input {
+    position: absolute;
+    top: 0;
+    left: -1000%;
+    background: rgba(255,255,255,0.75);
+    color: black;
+    border: 0;
+    outline: 0;
+    width: 100%;
+}
+.terminal-container .terminal-screen-keys {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.terminal-container .terminal-screen-keys button {
+    background: -webkit-linear-gradient(top, #eeeef0, #d3d3d9);
+    border: 1px solid #58575e;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.25), inset 0 -2px 0 rgba(0,0,0,0.25), inset 0 1px 0 #fff;
+    border: 1px solid #000;
+    border-radius: 2px;
+    padding: 8px;
+    font-size: 14px;
+    text-shadow: 0 1px 0 #fff;
+}
+.terminal-container .terminal-screen-keys button:focus, .terminal-container .terminal-screen-keys button.active {
+    outline: 0px;
+    background: -webkit-linear-gradient(top, #ccccd0, #a3a3a9);
+}
+.terminal-container .terminal-size-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.75);
+    color: black;
+    padding: 0 3px;
+}
