@@ -1,7 +1,7 @@
 {
   "name": "akurath",
-  "version": "1.2.0",
-  "description": "IDE Frontend for Codepsaces",
+  "version": "1.2.3-beta",
+  "description": "IDE Frontend for codepsaces.io",
   "homepage": "https://www.codespaces.io",
   "author": {
     "name": "School of Devops",
