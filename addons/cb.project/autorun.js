@@ -31,7 +31,7 @@ define([
                 'default': "play",
             },
             offline: false,
-            position: nodeNum,
+            position: nodeNum + 10,
             shortcuts: [
                 "alt+" + nodeNum
             ]
