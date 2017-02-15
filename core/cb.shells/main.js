@@ -40,7 +40,7 @@ function setup(options, imports, register) {
 
     // Simplify shell creation
     manager.createShellCommand = function(shellId, args, opts) {
-        var exitCMD = "ssh ubuntu@192.168.0.56";
+        var exitCMD = "bash";
 
         // Spawn shell
         return manager.createShell(_.defaults({}, opts || {}, {
