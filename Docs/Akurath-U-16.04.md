@@ -63,7 +63,7 @@ nvm use v0.10.40
 Update Bashrc file to use Node 0.10.40.
 
 ```
-  echo "nvm use v0.10.40" >> ~/.bashrc
+echo "nvm use v0.10.40" >> ~/.bashrc
 ```
 
 ## Step 3 - Install Akurath

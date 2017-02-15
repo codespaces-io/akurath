@@ -13,9 +13,11 @@ Akurath is built with web technologies: `node.js`, `javascript`, `html` and `les
 
 ## Prerequisites
 
-To follow this tutorial, you will need the following:
+These are the prerequisites of Akurath IDE:
 * 64-bit Ubuntu 14.04
 * Non-root user with sudo privileges
+* NVM v-0.16.1 (Covered in this tutorial)
+* NodeJS v-0.10.40 (Covered in this tutorial)
 
 All the commands in this tutorial should be run as a non-root user. Priviliged commands are preceded by sudo.
 
