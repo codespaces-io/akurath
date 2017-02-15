@@ -1,7 +1,7 @@
 {
-    "name": "cb.project",
+    "name": "cb.nodes",
     "version": "0.1.0",
-    "title": "Project",
+    "title": "Nodes",
     "description": "Project types manager: autorun, sample",
     "homepage": "https://github.com/FriendCode/codebox",
     "license": "Apache",

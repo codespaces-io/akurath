@@ -14,6 +14,6 @@
         "main": "client"
     },
     "engines": {
-        "akurath": ">=0.1.0"
+        "codebox": ">=0.1.0"
     }
 }
