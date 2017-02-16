@@ -1,14 +1,16 @@
 # akurath
-> "Open source devops IDE on cloud, a Frontend engine used in Codespaces"
+> "Devops IDE on Cloud, a Frontend engine used in Codespaces"
 
-Akurath is a complete and modular cloud IDE. 
+Akurath is a devops IDE frontend for codespaces.io.
 
 
-Akurath is built with web technologies: `node.js`, `javascript`, `html` and `less`. The IDE possesses a very modular and extensible architecture, that allows you to build your own features with through add-ons. Akurath is the first open and modular IDE capable of running both on the Desktop and in the cloud (with offline support).
+Akurath is built with web technologies: `node.js`, `javascript`, `html` and `less`. The IDE possesses a very modular and extensible architecture, that allows you to build your own features with through add-ons. Akurath is the first open and modular IDE created specially for writing Infrastructure as a Code with tools such as Chef, Puppet, Ansible, docker etc.
 
 The project is open source under the [Apache 2.0](https://github.com/codespaces-io/akurath/blob/master/LICENSE) license.
 
+### CodeboxIDE and Akurath, a fork story
 
+Akurath project is been created  as a fork of a fantastic general purpose IDE, originally wrote by Sammy Pessé, who is a CTO at gitbooks at the the time of writing this,   with great contributions by Aaron O'Mullan. [Read the story](FORK.md) about why we forked it and in which directions are we going.  
 
 ## How to install and run Akurath
 
@@ -28,7 +30,7 @@ $ akurath run ./myworkspace --open
 
 Use this command to run and open Akurath IDE. By default, Akurath uses GIT to identify you, you can use the option ```--email=john.doe@gmail.com``` to define the email you want to use during GIT operations.
 
-Others comand line options are available and can be list with: ```akurath --help```. For deeper configuration, take a look at the documentation about [environment variables](http://help.akurath.io/ide/env.html).
+Others command line options are available and can be list with: ```akurath --help```.
 
 #### Need help?
 
@@ -45,4 +47,3 @@ The IDE's documentation can be found at [help.akurath.io](http://help.akurath.io
 ## Contact info
 
 * **Website:** [www.codespaces.io](https://www.codespaces.io)
-
