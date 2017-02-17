@@ -1,4 +1,4 @@
-# How to Install and Use Akurath on Ubuntu 16.04
+# How to Install and Use Akurath as a Node Package on Ubuntu 16.04
 
 ## Introduction
 

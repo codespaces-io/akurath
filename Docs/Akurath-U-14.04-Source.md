@@ -1,4 +1,4 @@
-# How to Install and Use Akurath on Ubuntu 14.04
+# How to Install and Use Akurath from Source on Ubuntu 14.04
 
 ## Introduction
 
