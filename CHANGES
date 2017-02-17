@@ -1,3 +1,9 @@
+2017-02-17  Gourav Shah <gs@schoolofdevops.com>
+            Santosh Sutar <san.sutar@gmail.com>
+    * Add argument to pass node number to project runner rpc call
+    * Always detect project type as "D" until adding project support for devops tools
+    * Pass a msg while opening a terminal with nodenum 
+
 2017-02-16  
             Gourav Shah <gs@schoolofdevops.com>
     * Added the fork story
