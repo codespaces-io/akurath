@@ -10,37 +10,39 @@ var ProjectType = require('./project').ProjectType;
 // Supported project types
 // This list is ordered
 var SUPPORTED = [
+
+    //AKUNOTE : This is where you add project detection code for chef, puppet, ansible etc. 
     // PaaS
-    require("./appengine"),
-    require("./procfile"),
-    require("./parse"),
-    require("./maven"),
+    //require("./appengine"),
+    //require("./procfile"),
+    //require("./parse"),
+    //require("./maven"),
 
     // Frameworks
-    require("./django"),
-    require("./gradle"),
-    require("./grails"),
-    require("./meteor"),
+    //require("./django"),
+    //require("./gradle"),
+    //require("./grails"),
+    //require("./meteor"),
 
     // Languages
-    require("./c"),
+    //require("./c"),
     require("./d"),
-    require("./dart"),
-    require("./go"),
-    require("./clojure"),
-    require("./java"),
-    require("./logo"),
-    require("./php"),
-    require("./node"),
-    require("./play"),
-    require("./python"),
-    require("./ruby"),
-    require("./scala"),
-    require("./lua"),
+    //require("./dart"),
+    //require("./go"),
+    //require("./clojure"),
+    //require("./java"),
+    //require("./logo"),
+    //require("./php"),
+    //require("./node"),
+    //require("./play"),
+    //require("./python"),
+    //require("./ruby"),
+    //require("./scala"),
+    //require("./lua"),
 
     // Fallbacks
-    require("./static"),
-    require("./makefile")
+    //require("./static"),
+    //require("./makefile")
 ];
 
 

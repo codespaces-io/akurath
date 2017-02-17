@@ -25,6 +25,7 @@ fi
 
 if [ -f ${entry_point} ]; then
 #    exec dmd -run ${entry_point}
+   echo "connecting to node$NODENUM..."
    ssh devops@node$NODENUM
 else
     # Exit
