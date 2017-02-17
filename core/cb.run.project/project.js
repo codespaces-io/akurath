@@ -41,7 +41,7 @@ ProjectRunner.prototype.portId = function(runnerId) {
     return [this.id, runnerId].join('-');
 };
 
-ProjectRunner.prototype.runScript = function(runner, port) {
+ProjectRunner.prototype.runScript = function(runner, port, options) {
     var self = this;
 
     // Id of our shell
@@ -59,7 +59,9 @@ ProjectRunner.prototype.runScript = function(runner, port) {
             this.workspace.root,
 
             // Port allocated/claimed
-            port
+            port,
+            
+            options.nodeId
         ], {
         cwd: this.workspace.root,
         env: _.defaults({
@@ -163,7 +165,7 @@ ProjectRunner.prototype.run = function(options) {
         .spread(function(runner, port) {
             // Run the script in a new shell and return
             // a object describing the run
-            return self.runScript(runner, port);
+            return self.runScript(runner, port, options);
         });
     });
 };
