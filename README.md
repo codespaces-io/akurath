@@ -46,4 +46,4 @@ The IDE's documentation can be found at [help.akurath.io](http://help.akurath.io
 
 ## Contact info
 
-* **Website:** [www.codespaces.io](https://www.codespaces.io)
+* **Website:** [www.codespaces.io](http://www.codespaces.io)
