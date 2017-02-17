@@ -12,6 +12,7 @@ fi
 # Script args
 WORKSPACE=$1
 PORT=$2
+NODENUM=$3
 
 # Get plausible entry point
 entry_point=$(${FGREP} "[int|void] main\(" -R ${WORKSPACE} | tr ':' '\n' | grep ".d" | head -n 1)
@@ -23,7 +24,8 @@ if [ -z "$entry_point" ]; then
 fi
 
 if [ -f ${entry_point} ]; then
-    exec dmd -run ${entry_point}
+#    exec dmd -run ${entry_point}
+   ssh devops@node$NODENUM
 else
     # Exit
     exit 1
