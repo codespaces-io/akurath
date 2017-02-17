@@ -148,4 +148,4 @@ Akurath console is accessible on your machine's IP with port 8000. Just visit th
 
 Enter your e-mail and you are ready to use Akurath IDE!
 
-![landing](images/landing.jpg)
+![landingpage](images/landing.jpg)
