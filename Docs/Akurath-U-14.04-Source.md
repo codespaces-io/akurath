@@ -68,13 +68,9 @@ Update Bashrc file to use Node 0.10.40.
 echo "nvm use v0.10.40" >> ~/.bashrc
 ```
 
-## Step 3 - Install Akurath
+## Step 3 - Install Akurath from Source
 
- Now we are going to install the latest and greatest version of Akurath. This can be done by two ways.
- * Install from source
- * Install from npm
-
-### Step 3.1 - Install From Source
+Now we are going to install the latest and greatest version of Akurath.
 
 First, we have to clone the Akurath repository.
 
@@ -114,14 +110,6 @@ npm ERR!     /home/ubuntu/akurath/npm-debug.log
 npm ERR! not ok code 0
 ```
 
-### Step 3.2 - Install from NPM
-
-Akurath is available as a NPM package. You can install this package just like any other npm package.
-
-```
-npm install -g akurath
-```  
-
 ## Step 4 - Run Akurath
 
 That's it. We are all set to run Akurath.
@@ -129,11 +117,6 @@ If you have installed Akurath from source, then simply run grunt from the Akurat
 
 ```
 grunt
-```
-If you have installed Akurath as a NPM package, then to start Akurath IDE,
-
-```
-akurath run ./myworkspace --open
 ```
 
 After running grunt, you will see that Akurath is running on localhost with port 8000.
