@@ -46,4 +46,4 @@ The IDE's documentation can be found at [Akurath Wiki](https://github.com/codesp
 
 ## Contact info
 
-* **Website:** [www.codespaces.io](https://www.codespaces.io)
+* **Website:** [www.codespaces.io](http://www.codespaces.io)
