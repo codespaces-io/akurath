@@ -34,7 +34,7 @@ Others command line options are available and can be list with: ```akurath --hel
 
 #### Need help?
 
-The IDE's documentation can be found at [help.akurath.io](http://help.akurath.io). Feel free to ask any questions or signal problems by adding issues.
+The IDE's documentation can be found at [Akurath Wiki](https://github.com/codespaces-io/akurath/wiki). Feel free to ask any questions or signal problems by adding issues.
 
 ## Helping Akurath
 
